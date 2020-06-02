@@ -12,7 +12,7 @@ class PostsController < ApplicationController
         @post = Post.new(posts_params)
         @post.user_id = current_user.id
 
-        puts "....DONE!!!!!!!!! #{@post}"
+        p "....DONE!!!!!!!!! #{@post.inspect}"
 
         if @post.save
             redirect_to root_url
