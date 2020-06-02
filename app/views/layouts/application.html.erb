@@ -4,10 +4,27 @@
     <title>Blogon</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= javascript_pack_tag :application %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><%= image_pack_tag 'media/packs/images/blogon.png' %></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><%= link_to "Home", users_posts_path %></li>
+        <% if logged_in? %>
+          <li>You are logged in, <%= current_user.name %></li>
+          <li><a href="#">logout</a></li>
+          <% else %>
+        <li><%= link_to "Sign Up", new_users_path %></li>
+        <li><%= link_to "Login", login_path %></li>
+        <%end%>
+        <li><a href="#">Page 3</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <body>
     <%= yield %>

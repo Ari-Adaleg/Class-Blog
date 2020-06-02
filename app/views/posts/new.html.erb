@@ -1,0 +1,19 @@
+<h1>Compose your thoughts on BlogOn</h1>
+
+    <%= form_for @post, url: users_posts_path do |p| %>
+        <p>
+    <%= p.label "Title:" %><br>
+    <%= p.text_field :title %>
+        </p>
+        <p>
+    <%= p.label "Article:" %><br>
+    <%= p.text_field :article %>
+        </p>
+        <p>
+    <%= p.label "Picture link for the Article (optional):" %><br>
+    <%= p.text_field :img_url %>
+        </p>
+        <p>
+    <%= p.submit "Post your Thought!" %>
+        </p>
+<% end %>

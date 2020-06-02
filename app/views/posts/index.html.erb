@@ -1,0 +1,14 @@
+<% @tags.each do |t| %>
+    <p><%= t.name %></p>
+<% end %>
+
+<%= link_to "Create Post", new_users_post_path %>
+<% @posts.each do |p| %>
+
+    <h2><%= p.title %></h2>
+    <img src="<%= p.img_url %>">
+    <p><%= p.article %></p>
+    <%= link_to "Show More", users_post_path(p) %>
+    <%= link_to "Edit Post", edit_users_post_path(p) %>
+    <%= link_to "Delete Post", users_post_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%end%>
