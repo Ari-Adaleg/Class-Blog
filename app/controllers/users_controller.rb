@@ -15,9 +15,20 @@ class UsersController < ApplicationController
 
         if @user.save
             flash[:success] = "Welcome #{@user.name} to BlogOn!"
-            redirect_to welcome_path
+
+            redirect_to users_posts_path
         else
             render :new
         end
+    end
+
+    def destroy
+        @user = User.find_by(params[:id])
+      if @user && @user == current_user
+        session[:user_id] = nil
+      end
+      @user.destroy
+  
+      redirect_to welcome_path
     end
 end

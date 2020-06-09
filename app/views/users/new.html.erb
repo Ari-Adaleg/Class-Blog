@@ -1,3 +1,4 @@
+
 <h1> Create Account </h1>
 
 <% if @user.errors.any? %>
@@ -9,7 +10,7 @@
         <% end %>
     </ul>
 <% end %>
-
+<div class="new_account">
 <%= form_for @user, url: users_path do |u| %>
     <p>
 <%= u.label "Name:" %><br>
@@ -28,6 +29,7 @@
 <%= u.password_field :password_confirmation %>
     </p>
     <p>
-<%= u.submit "Sign Up!" %>
+<%= u.submit "Sign Up!", :class => "button" %>
     </p>
 <% end %>
+</div>

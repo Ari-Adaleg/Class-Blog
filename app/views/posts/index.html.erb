@@ -1,14 +1,23 @@
-<% @tags.each do |t| %>
-    <p><%= t.name %></p>
-<% end %>
 
-<%= link_to "Create Post", new_users_post_path %>
 <% @posts.each do |p| %>
+    <div class="container">
 
+    <div class="title">
     <h2><%= p.title %></h2>
+    </div>
+    <div>
     <img src="<%= p.img_url %>">
+    </div>
+    <div class="article">
     <p><%= p.article %></p>
-    <%= link_to "Show More", users_post_path(p) %>
-    <%= link_to "Edit Post", edit_users_post_path(p) %>
-    <%= link_to "Delete Post", users_post_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div class="buttonlocat">
+    <div>
+    <h5><%= p.comments.count %> Comments</h5>
+    </div>
+    <button class="button"><%= link_to "Show More", users_post_path(p) %></button>
+    <button class="button"><%= link_to "Edit Post", edit_users_post_path(p) %></button>
+    <button class="delete"><%= link_to "Delete Post", users_post_path(p), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+    </div>
+    </div>
 <%end%>

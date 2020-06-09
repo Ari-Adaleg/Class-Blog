@@ -1,9 +1,10 @@
-<h1>Sign Up</h1>
-
 <% if logged_in? %>
-    <h1>You are logged in, <%= current_user.name %></h1>
+    <h1 class="signup">Welcome</h1>
+    <h2 class="signup">You are logged in, <%= current_user.name %></h2>
+<% else %>
+    <h1 class="signup">Sign Up</h1>
 <%end%>
-
-<%= link_to "Login", login_path %>
-
-<%= link_to "Sign Up", new_users_path %>
+<div class="signup">
+<%= link_to "Login", login_path, :class => "button" %>
+<%= link_to "Sign Up", new_users_path, :class => "button" %>
+</div>

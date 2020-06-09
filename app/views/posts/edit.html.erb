@@ -1,6 +1,6 @@
-<h1>Compose your thoughts on BlogOn</h1>
+<h1>Edit your thoughts on BlogOn</h1>
 
-    <%= form_for @post, url: users_posts_path do |p| %>
+    <%= form_for @post, url: users_post_path do |p| %>
         <p>
     <%= p.label "Title:" %><br>
     <%= p.text_field :title %>
@@ -14,6 +14,6 @@
     <%= p.text_field :img_url %>
         </p>
         <p>
-        <%= p.submit "Post your Thought!", :class => "button" %>
+    <%= p.submit "Update your Thought!", :class => "button" %>
         </p>
 <% end %>

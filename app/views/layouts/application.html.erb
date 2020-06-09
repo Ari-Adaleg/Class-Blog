@@ -1,3 +1,7 @@
+<%= stylesheet_link_tag "global" %>
+<%= stylesheet_link_tag "nav" %>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,26 +11,28 @@
     <%= javascript_pack_tag :application %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"><%= image_pack_tag 'media/packs/images/blogon.png' %></a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><%= link_to "Home", users_posts_path %></li>
-        <% if logged_in? %>
-          <li>You are logged in, <%= current_user.name %></li>
-          <li><a href="#">logout</a></li>
-          <% else %>
-        <li><%= link_to "Sign Up", new_users_path %></li>
-        <li><%= link_to "Login", login_path %></li>
-        <%end%>
-        <li><a href="#">Page 3</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <body>
-    <%= yield %>
-  </body>
+  <header>
+    <div class="navbar">
+        <p class="leftside"><a href="/users/posts"><%= image_pack_tag 'media/packs/images/blogon.png' %></a></p>
+        <p><%= link_to "Home", users_posts_path %></p>
+        <p><%= link_to "Create Post", new_users_post_path %></p>
+        <div class="rightside">
+        <% if logged_in? %>
+          <p><%= link_to "Log Out", users_sessions_path, method: :delete %></p>
+          <p><%= link_to "Delete Account", users_path, method: :delete, data: { confirm: "Are you sure? \nYou will lose all your posts, and won't be able to recover them!" }%></p>
+          <p class="own">You are logged in, <%= current_user.name %></p>
+        <% else %>
+          <p><%= link_to "Sign Up", new_users_path %></p>
+          <p><%= link_to "Login", login_path %></p>
+        <%end%>
+      </div>
+    </div>
+  </header>
+
+  <div class="main">
+    <body>
+      <%= yield %>
+    </body>
+  </div>
 </html>

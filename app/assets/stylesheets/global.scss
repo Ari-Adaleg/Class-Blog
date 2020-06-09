@@ -1,0 +1,179 @@
+/* The navigation bar */
+
+head {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  background-image: url("https://i.imgur.com/1LiqUsS.jpg");
+  background-size: 100%;
+  font-family: canela deck, canela text; 
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: rgb(11, 2, 74);
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    left: 0;
+    width: 100%; /* Full width */
+    margin-left: 0px;
+    font-family: helvetica;
+    font-weight: bolder;
+  }
+
+  .navbar .leftside {
+    margin-left: 20%;
+  }
+
+  .navbar .rightside {
+      float: right;
+      margin-right: 20%;
+  }
+
+  .navbar img {
+    height: 18px;
+}
+  
+  /* Links inside the navbar */
+  .navbar p {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar a {
+      text-decoration: none;
+      color: white;
+  }
+  
+  /* Change background on mouse-over */
+  .navbar p:hover {
+    background: #ddd;
+    color: black;
+  }
+  
+  /* Main content */
+
+  .main .signup {
+    font-size: 50;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .main .new_account {
+    max-width: 50%;
+  }
+
+  .main .container {
+    background-color: rgba(255, 255, 255, 0.502);
+    padding: 30px;
+    padding-top: 10px;
+  }
+
+  .main {
+    margin-top: 100px; /* Add a top margin to avoid content overlay */
+    width: 100%;
+    max-width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  .main h1 {
+    font-size: 40;
+  }
+
+  .main h2 {
+    font-size: 30;
+  }
+
+  .main h3 {
+    font-size: 20;
+  }
+
+  .main h4 {
+    font-size: 18;
+  }
+
+  .main hr {
+    max-width: 85%;
+  }
+
+  .main img {
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .main .article {
+    text-align: justify;
+    font-size: 20;
+  }
+
+  .main .writer {
+    text-align: justify;
+  }
+  
+  .main .delete {
+    color: white;
+    background-color: rgb(220, 43, 43);
+    border-radius:7px;
+    border:0.5px solid #e37b55b3;
+    display:inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 17px;
+    text-decoration: none;
+  }
+
+  .main .delete:hover {
+    color: black;
+    background-color: rgba(255, 102, 102, 0.55);
+    text-decoration: none;
+
+  }
+
+  .main .buttonlocat {
+    margin-bottom: 8px;
+  }
+
+  .main .button {
+    color: rgb(11, 2, 74);
+    background-color: rgb(228, 228, 228);
+    border-radius:7px;
+    border:0.5px solid #2b1b00;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 17px;
+    text-decoration: none;
+  }
+
+  .main .button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(11, 2, 74);
+    text-decoration: none;
+  }
+
+  .main .comments {
+    margin-bottom: 8px;
+  }
+
+  .main .c_title {
+    margin-bottom: 10px;
+  }
+
+  .main .comment_contain {
+    text-align: justify;
+    padding-left: 30px;
+    padding-right: 30px;
+  }

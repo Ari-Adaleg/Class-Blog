@@ -1,0 +1,11 @@
+<h1>What would you like to comment?</h1>
+
+<%= form_for [@post, @comment], url: users_post_comments_path, method: :post do |p| %>
+    <p>
+<%= p.label "Message:" %><br>
+<%= p.text_field :message %>
+    </p>
+    <p>
+<%= p.submit "Post your Comment!", :class => "button" %>
+    </p>
+<% end %>
